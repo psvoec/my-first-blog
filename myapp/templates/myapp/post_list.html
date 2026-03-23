@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <p>{{posts}}</p>
-    <p>{{posts}}</p>
+    <header>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </header>
+    {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <a href="">{{ post.tilte }}</a>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+
 </body>
 </html>
